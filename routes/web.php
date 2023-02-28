@@ -16,7 +16,7 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('LoginPage');
+    return view('Login_V');
 });
 
 Route::get('/RegisterPage', function () {
@@ -27,7 +27,7 @@ Route::get('/FormEmploy', function () {
     return view('FormEmploy');
 });
 
-Route::post('/LoginPage',[Controller::class, "Login"])->name('connectUser');
+Route::post('/Login_V',[Controller::class, "Login"])->name('connectUser');
 Route::post('/RegisterPage',[Controller::class, "Create"])->name('createUser');
 Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtbSante');
 
@@ -35,8 +35,6 @@ Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtb
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
-
 
 Route::get('/widgets', function () {
     return view('widgets');
