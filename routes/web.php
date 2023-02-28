@@ -40,6 +40,10 @@ Route::get('/widgets', function () {
     return view('widgets');
 });
 
+Route::get('/Register_V', function () {
+    return view('Register_V');
+});
+
 Route::get('/AjouterMission', function () {
     return view('AjouterMission');
 });
