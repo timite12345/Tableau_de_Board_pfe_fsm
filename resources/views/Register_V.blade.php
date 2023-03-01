@@ -66,8 +66,8 @@ Looking to login?
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
 <div class="header-text">
-<h2>Paper Dashboard PRO</h2>
-<h4>Register for free and experience the dashboard today.</h4>
+<h2>Ivoire Secours Dashboard </h2>
+<h4>Enregistrer un adminsitrateur.</h4>
 <hr>
 </div>
 </div>
@@ -107,26 +107,29 @@ Here you can write a feature description for your dashboard, let the users know 
 </div>
 </div>
 <div class="col-md-4">
-<form method="#" action="#">
+<form method="post" action="{{route('createUser')}}">
+
+@csrf
+
 <div class="card card-plain">
 <div class="content">
 <div class="form-group">
-<input type="email" placeholder="Your First Name" class="form-control">
+<input type="text" name="nom" placeholder="Nom" class="form-control">
 </div>
 <div class="form-group">
-<input type="email" placeholder="Your Last Name" class="form-control">
+<input type="text" name="prenom" placeholder="Prenom" class="form-control">
 </div>
 <div class="form-group">
-<input type="email" placeholder="Company" class="form-control">
+<input type="text" name="adresse" placeholder="Adresse" class="form-control">
 </div>
 <div class="form-group">
-<input type="email" placeholder="Enter email" class="form-control">
+<input type="tel"name="contact" placeholder="Contact" class="form-control">
 </div>
 <div class="form-group">
-<input type="password" placeholder="Password" class="form-control">
+<input type="email" name="email" placeholder="Email" class="form-control">
 </div>
 <div class="form-group">
-<input type="password" placeholder="Password Confirmation" class="form-control">
+<input type="password" name="password" placeholder="Password " class="form-control">
 </div>
 </div>
 <div class="footer text-center">
@@ -141,7 +144,7 @@ Here you can write a feature description for your dashboard, let the users know 
 <footer class="footer footer-transparent">
 <div class="container">
 <div class="copyright text-center">
-&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="https://www.creative-tim.com/">Creative Tim</a>
+&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="https://www.creative-tim.com/">Ivoire Secours</a>
 </div>
 </div>
 </footer>
