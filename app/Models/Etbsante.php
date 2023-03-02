@@ -16,4 +16,12 @@ class Etbsante extends Model
         'tel',
         'estValide'
     ];
+
+    public function demandetransport(){
+        return $this->hasMany(Demandetransport::class);
+    }
+
+    public function facture(){
+        return $this->hasMany(Facture::class);
+    }
 }

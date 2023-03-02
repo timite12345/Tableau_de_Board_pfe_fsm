@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chauffeur extends Model
 {
-    use HasFactory;
+    use HasFactory; 
+
+    public function transport(){
+        return $this->hasMany(Transport::class);
+    }
 }

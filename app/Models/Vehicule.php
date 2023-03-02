@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicule extends Model
 {
     use HasFactory;
+
+    public function transport(){
+        return $this->hasMany(Transport::class);
+    }
 }

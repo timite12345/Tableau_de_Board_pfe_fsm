@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Facture extends Model
 {
     use HasFactory;
+
+    public function etbsante(){
+        return $this->hasMany(Etbsante::class);
+    }
 }
