@@ -18,6 +18,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("nom");
+            $table->unsignedBigInteger("idMalade");
+            $table->unsignedBigInteger("refEtb");
+            $table->unsignedBigInteger("idDemande");
             $table->foreign('idMalade')->references('id')->on('personne_malades')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('refEtb')->references('id')->on('etbsantes')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('idDemande')->references('id')->on('demandetransports')->onDelete('restrict')->onUpdate('restrict');

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string("nom");
             $table->string("adresse");
             $table->string("email");
+            $table->unsignedBigInteger("idDemande");
+            $table->unsignedBigInteger("idFacture");
             $table->foreign('idDemande')->references('id')->on('demandetransports')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('idFacture')->references('id')->on('factures')->onDelete('restrict')->onUpdate('restrict');
 

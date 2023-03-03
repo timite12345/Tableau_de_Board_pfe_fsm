@@ -17,7 +17,6 @@ return new class extends Migration
         Schema::create('demandetransports', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer("refEtb");
             $table->string("condTransp");
             $table->date("date_Dep");
             $table->string("adresse_Dep");
@@ -25,9 +24,10 @@ return new class extends Migration
             $table->boolean("estUrgent")->default(false);
             $table->boolean("estTraite")->default(false);
             $table->boolean("estFacturé")->default(false);
+            $table->unsignedBigInteger("refEtb");
+            $table->unsignedBigInteger("idMalade");
             $table->foreign('refEtb')->references('id')->on('etbsantes')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('idMalade')->references('id')->on('personne_malades')->onDelete('restrict')->onUpdate('restrict');
-
 
         });
     }

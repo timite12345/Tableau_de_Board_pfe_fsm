@@ -21,6 +21,8 @@ return new class extends Migration
             $table->date("heureDeb");
             $table->date("heureFin");
             $table->string("commentaire");
+            $table->unsignedBigInteger("idChauffeur");
+            $table->unsignedBigInteger("idDemande");
             $table->foreign('idChauffeur')->references('id')->on('chauffeurs')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('idDemande')->references('id')->on('demandetransports')->onDelete('restrict')->onUpdate('restrict');
 
