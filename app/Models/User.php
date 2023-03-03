@@ -44,4 +44,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function demandetransport(){
+        return $this->hasMany(Demandetransport::class);
+    }
+    public function type_user(){
+        return $this->hasOne(Type_user::class);
+    }
+ 
 }

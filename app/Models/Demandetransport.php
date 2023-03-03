@@ -14,6 +14,13 @@ class Demandetransport extends Model
     }
 
     public function etbsante(){
-        return $this->belogsTo(Etbsante::class);
+        return $this->belongsTo(Etbsante::class);
+    }
+
+    public function partenaire(){
+        return $this->hasMany(Partenaire::class);
+    }
+    public function user(){
+        return $this->hasOne(User::class);
     }
 }

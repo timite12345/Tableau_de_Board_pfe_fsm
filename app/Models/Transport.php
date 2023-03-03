@@ -10,9 +10,15 @@ class Transport extends Model
     use HasFactory;
 
     public function chauffeur(){
-        return $this->hasMany(Chauffeur::class);
+        return $this->hasOne(Chauffeur::class);
     }
     public function vehicule(){
         return $this->hasOne(Vehicule::class);
+    }
+    public function facture(){
+        return $this->belongsTo(Facture::class);
+    }
+    public function demandetransport(){
+        return $this->hasOne(Demandetransport::class);
     }
 }

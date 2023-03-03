@@ -24,4 +24,7 @@ class Etbsante extends Model
     public function facture(){
         return $this->hasMany(Facture::class);
     }
+    public function type_etb(){
+        return $this->hasOne(Type_etb::class);
+    }
 }

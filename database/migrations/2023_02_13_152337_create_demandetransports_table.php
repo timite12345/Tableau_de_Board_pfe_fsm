@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('demandetransports', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
@@ -24,6 +25,10 @@ return new class extends Migration
             $table->boolean("estUrgent")->default(false);
             $table->boolean("estTraite")->default(false);
             $table->boolean("estFacturé")->default(false);
+            $table->foreign('refEtb')->references('id')->on('etbsantes')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('idMalade')->references('id')->on('personne_malades')->onDelete('restrict')->onUpdate('restrict');
+
+
         });
     }
 

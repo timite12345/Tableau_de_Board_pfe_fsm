@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Type_permis extends Model
+class Type_user extends Model
 {
     use HasFactory;
 
-    public function chauffeur(){
-        return $this->hasMany(Chauffeur::class);
+    public function user(){
+        return $this->hasMany(User::class);
     }
 }

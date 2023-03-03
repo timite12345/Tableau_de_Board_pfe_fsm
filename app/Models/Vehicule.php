@@ -12,4 +12,8 @@ class Vehicule extends Model
     public function transport(){
         return $this->hasMany(Transport::class);
     }
+
+    public function type_permis(){
+        return $this->hasMany(Type_permis::class);
+    }
 }
