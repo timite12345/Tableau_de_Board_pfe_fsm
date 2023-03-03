@@ -486,7 +486,7 @@
                   </select>
                     <div class="form-group">
                       <label>Chauffeur</label>
-                      <select name="id" class="form-control select2" style="width: 100%;">
+                      <select name="idPersonne" class="form-control select2" style="width: 100%;">
                         <option selected="selected">Selectionner un Chauffeur</option>
                         @foreach($chauffeurs as $chauffeur)
                         <option value="{{$chauffeur->id}}">{{$chauffeur->idPersonne}}</option>
