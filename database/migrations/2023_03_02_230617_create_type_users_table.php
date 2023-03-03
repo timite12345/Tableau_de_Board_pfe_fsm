@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('type_users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger("idPersonne");
+            $table->foreign('idPersonne')->references('id')->on('personnes')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 

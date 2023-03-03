@@ -487,7 +487,7 @@
                     <div class="form-group">
                       <label>Chauffeur</label>
                       <select class="form-control select2" style="width: 100%;">
-                        <option selected="selected">Alabama</option>
+                        <option selected="selected">Selectionner un Chauffeur</option>
                         <option>Alaska</option>
                         <option>California</option>
                         <option>Delaware</option>

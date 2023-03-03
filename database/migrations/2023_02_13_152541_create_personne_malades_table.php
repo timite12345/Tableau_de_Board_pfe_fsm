@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->integer("idMalade");
+            $table->unsignedBigInteger("idPersonne");
+            $table->foreign('idPersonne')->references('id')->on('personnes')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
