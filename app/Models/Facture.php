@@ -10,7 +10,7 @@ class Facture extends Model
     use HasFactory;
 
     public function etbsante(){
-        return $this->hasOne(Etbsante::class);
+        return $this->belongsTo(Etbsante::class);
     }
 
     public function transport(){

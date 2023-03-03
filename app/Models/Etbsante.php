@@ -25,6 +25,6 @@ class Etbsante extends Model
         return $this->hasMany(Facture::class);
     }
     public function type_etb(){
-        return $this->hasOne(Type_etb::class);
+        return $this->belongsTo(Type_etb::class);
     }
 }

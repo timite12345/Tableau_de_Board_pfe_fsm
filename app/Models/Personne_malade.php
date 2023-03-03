@@ -10,6 +10,6 @@ class Personne_malade extends Model
     use HasFactory;
 
     public function demandetransport(){
-        return $this->hasMany(Demandetransport::class);
+        return $this->belongsToMany(Demandetransport::class);
     }
 }

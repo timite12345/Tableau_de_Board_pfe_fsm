@@ -47,7 +47,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="collapse navbar-collapse">
 <ul class="nav navbar-nav navbar-right">
 <li>
-<a href="register.html">
+<a href='{{url("Register_V")}}'>
 Register
 </a>
 </li>

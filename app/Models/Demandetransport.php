@@ -10,7 +10,7 @@ class Demandetransport extends Model
     use HasFactory;
 
     public function personne_malade(){
-        return $this->hasOne(Personne_malade::class);
+        return $this->belongsToMany(Personne_malade::class);
     }
 
     public function etbsante(){
@@ -18,7 +18,7 @@ class Demandetransport extends Model
     }
 
     public function partenaire(){
-        return $this->hasMany(Partenaire::class);
+        return $this->belongsToMany(Partenaire::class);
     }
     public function user(){
         return $this->hasOne(User::class);
