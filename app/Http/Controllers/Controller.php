@@ -54,6 +54,12 @@ class Controller extends BaseController
         return redirect('/welcome');
     }
 
+    public function Home(){
+
+        $chauffeurs= Chauffeur::all();
+        return view('AjouterMission', compact('chauffeurs'));
+    }
+
     public function Login(LoginRequest $request){
         $request->authenticate();
         $request->session()->regenerate();
@@ -68,6 +74,8 @@ class Controller extends BaseController
         return redirect('/LoginPage');
 
     }
+
+
 
     public function UpdateProfil(Request $request, User $user){
         $data = $request->request->validate([

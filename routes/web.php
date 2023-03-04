@@ -49,7 +49,14 @@ Route::get('/AjouterMission', function () {
     return view('AjouterMission');
 });
 
+Route::post('/AjouterMission',[Controller::class, "Home"])->name('saveInfo');
+
+
 Route::get('/HistoriqueMission', function () {
     return view('HistoriqueMission');
+});
+
+Route::get('/NewMission', function () {
+    return view('NewMission');
 });
 
