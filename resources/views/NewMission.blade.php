@@ -68,32 +68,51 @@
   <div class="col-xl">
     <div class="card mb-4">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">Basic Layout</h5> <small class="text-muted float-end">Default label</small>
+        <h5 class="mb-0">Informations personnelles du patients</h5> 
       </div>
       <div class="card-body">
           <div class="mb-3">
-            <label class="form-label" for="basic-default-fullname">Full Name</label>
-            <input type="text" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
+            <label class="form-label" for="basic-default-fullname">Choisir Hopital</label>
+            <select class="form-control select2" style="width: 100%;">
+                    <option selected="selected">Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-default-company">Company</label>
-            <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
+            <label class="form-label" for="basic-default-company">Choisir Chauffeur</label>
+            <select name="idPersonne" class="form-control select2" style="width: 100%;">
+            <option selected="selected">Selectionner un Chauffeur</option>
+            @foreach($chauffeurs as $chauffeur)
+            <option value="{{$chauffeur->id}}">{{$chauffeur->idPersonne}}</option>
+            @endforeach
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class=label for="exampleInputName">Nom</label>
+            <div class="input-group input-group-merge">
+            <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
+              <input type="text" id="basic-default-email" class="form-control" placeholder="saisir nom" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class=label for="exampleInputName">Prenom</label>
+            <div class="input-group input-group-merge">
+            <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
+              <input type="text" id="basic-default-email" class="form-control" placeholder="saisir prenom" />
+            </div>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-email">Email</label>
             <div class="input-group input-group-merge">
-              <input type="text" id="basic-default-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-default-email2" />
+            <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+              <input type="text" id="basic-default-email" class="form-control" placeholder="saisir email" />
               <span class="input-group-text" id="basic-default-email2">@example.com</span>
             </div>
-            <div class="form-text"> You can use letters, numbers & periods </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-default-phone">Phone No</label>
-            <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="658 799 8941" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-default-message">Message</label>
-            <textarea id="basic-default-message" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?"></textarea>
           </div>
       </div>
     </div>
@@ -101,53 +120,53 @@
   <div class="col-xl">
     <div class="card mb-4">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">Basic with Icons</h5>
-        <small class="text-muted float-end">Merged input group</small>
+        <h5 class="mb-0">Conditions de transport du patient</h5>
       </div>
       <div class="card-body">
         <!-- <form> -->
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+            <label class="form-label" for="basic-icon-default-fullname">Condition de transport</label>
+            <select class="form-control select2" style="width: 100%;">
+                    <option selected="selected">Grave</option>
+                    <option>Pas Grave</option>
+                    <option>Grave</option>
+                  </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-company">Besoin d'appareillages</label>
+            <select class="form-control select2" style="width: 100%;">
+                    <option selected="selected">Non</option>
+                    <option>Oui</option>
+                    <option>Non</option>
+                  </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-email">Adresse depart</label>
             <div class="input-group input-group-merge">
-              <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-              <input type="text" class="form-control" id="basic-icon-default-fullname" placeholder="John Doe" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" />
+              <input type="text" id="basic-icon-default-email" class="form-control" placeholder="adresse de depart" />
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-company">Company</label>
-            <div class="input-group input-group-merge">
-              <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
-              <input type="text" id="basic-icon-default-company" class="form-control" placeholder="ACME Inc." aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" />
-            </div>
+            <label class="form-label" for="basic-icon-default-phone">Urgent</label>
+            <select class="form-control select2" style="width: 100%;">
+                    <option selected="selected">Non</option>
+                    <option>Oui</option>
+                    <option>Non</option>
+                   
+                  </select>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-email">Email</label>
-            <div class="input-group input-group-merge">
-              <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-              <input type="text" id="basic-icon-default-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
-              <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
-            </div>
-            <div class="form-text"> You can use letters, numbers & periods </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-phone">Phone No</label>
-            <div class="input-group input-group-merge">
-              <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
-              <input type="text" id="basic-icon-default-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" aria-describedby="basic-icon-default-phone2" />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-message">Message</label>
+            <label class="form-label" for="basic-icon-default-message">Commentaires</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
-              <textarea id="basic-icon-default-message" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?" aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2"></textarea>
+              <textarea id="basic-icon-default-message" class="form-control" placeholder="commentaires"></textarea>
             </div>
           </div>
         </div>
       </div>
   </div>
       <div class=" footer text-center">
-          <button type="submit" class="btn btn-fill btn-danger btn-wd">Create Free Account</button>
+          <button type="submit" class="btn btn-fill btn-danger btn-wd">Enregistrer Nouvelle Mission</button>
       </div>
     </div>
 </div>
