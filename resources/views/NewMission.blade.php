@@ -88,9 +88,9 @@
             <label class="form-label" for="basic-default-company">Choisir Chauffeur</label>
             <select name="idChauffeur" class="form-control select2" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
-            <!-- @foreach($chauffeurs as $chauffeur)
+            @foreach($chauffeurs as $chauffeur)
             <option value="{{$chauffeur->id}}">{{$chauffeur->idPersonne}}</option>
-            @endforeach -->
+            @endforeach
             </select>
           </div>
           <div class="mb-3">

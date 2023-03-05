@@ -49,7 +49,7 @@ Route::get('/AjouterMission', function () {
     return view('AjouterMission');
 });
 
-Route::post('/AjouterMission',[Controller::class, "NewMission"])->name('saveInfo');
+Route::post('/NewMission',[Controller::class, "NewMission"])->name('saveInfo');
 
 
 Route::get('/HistoriqueMission', function () {

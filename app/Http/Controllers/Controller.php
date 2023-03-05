@@ -15,6 +15,17 @@ use App\Providers\AppServiceProovider;
 use App\Models\Personne;
 use App\Models\Etbsante;
 use App\Models\User;
+use App\Models\Demandetransport;
+use App\Models\Chauffeur;
+use App\Models\Facture;
+use App\Models\Partenaire;
+use App\Models\Personne_malade;
+use App\Models\Transport;
+use App\Models\Type_etb;
+use App\Models\Type_permis;
+use App\Models\Vehicule;
+
+
 
 
 
@@ -58,24 +69,24 @@ class Controller extends BaseController
     }
 
    // FONCTION CREER NOUVELLE MISSION
-   
+
     public function NewMission(Request $request){
-        $chauffeurs= Chauffeur::all();
-        $data['condTransp'] = $request->refEtb ;
+        $data['condTransp'] = $request->condTransp ;
         $data['nom'] = $request->nom ;
-        $data['prenom'] = $request->adresseEtb ;
+        $data['prenom'] = $request->prenom ;
         $data['email'] = $request->email ;
-        $data['date_Dep'] = $request->tel ;
-        $data['adresse_Dep'] = $request->estValide ;
-        $data['adresse_Arriv'] = $request->refEtb ;
-        $data['estUrgent'] = $request->refEtb ;
-        $data['estFacture'] = $request->refEtb ;
+        $data['date_Dep'] = $request->date_Dep ;
+        $data['adresse_Dep'] = $request->adresse_Dep ;
+        $data['adresse_Arriv'] = $request->adresse_Arriv ;
+        $data['estUrgent'] = $request->estUrgent ;
+        $data['estFacture'] = $request->estFacture ;
         $data['refEtb'] = $request->refEtb ;
-        $data['idMalade'] = $request->refEtb ;
-        $data['idChauffeur'] = $request->refEtb ;
+        $data['idMalade'] = $request->idMalade ;
+        $data['idChauffeur'] = $request->idChauffeur ;
         Demandetransport::create($data);
 
-        return view('AjouterMission', compact('chauffeurs'));
+        $chauffeurs= Chauffeur::all();
+        return view('/NewMission', compact('chauffeurs'));
     }
 
     public function Login(LoginRequest $request){
