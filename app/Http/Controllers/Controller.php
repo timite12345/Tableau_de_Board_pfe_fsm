@@ -34,6 +34,17 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+public function Home(){
+    $chauffeurs= Chauffeur::all();
+    return view('/Login_V', compact('chauffeurs'));
+}
+
+
+public function NewMission(){
+    $chauffeurs= Chauffeur::all();
+    return view('/NewMission', compact('chauffeurs'));
+}
+
   //FONCTION POUR CREER NOUVEL UTILISATEUR
 
     public function Create(Request $request){
@@ -70,7 +81,7 @@ class Controller extends BaseController
 
    // FONCTION CREER NOUVELLE MISSION
 
-    public function NewMission(Request $request){
+    public function CreateNewMission(Request $request){
         $data['condTransp'] = $request->condTransp ;
         $data['nom'] = $request->nom ;
         $data['prenom'] = $request->prenom ;
@@ -85,8 +96,7 @@ class Controller extends BaseController
         $data['idChauffeur'] = $request->idChauffeur ;
         Demandetransport::create($data);
 
-        $chauffeurs= Chauffeur::all();
-        return view('/NewMission', compact('chauffeurs'));
+        return view('/');
     }
 
     public function Login(LoginRequest $request){

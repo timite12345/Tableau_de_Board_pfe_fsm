@@ -16,9 +16,13 @@ use App\Http\Middleware;
 |
 */
 
-Route::get('/', function () {
-    return view('Login_V');
-});
+// Route::get('/', function () {
+//     return view('Login_V');
+// });
+
+Route::get('/',[Controller::class, "Home"]);
+Route::post('/NewMission',[Controller::class, "CreateNewMission"]);
+
 
 Route::get('/RegisterPage', function () {
     return view('RegisterPage');
@@ -31,6 +35,7 @@ Route::get('/FormEmploy', function () {
 Route::post('/Login_V',[Controller::class, "Login"])->name('connectUser');
 Route::post('/RegisterPage',[Controller::class, "Create"])->name('createUser');
 Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtbSante');
+Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('NewMission');
 
 
 Route::get('/welcome', function () {
