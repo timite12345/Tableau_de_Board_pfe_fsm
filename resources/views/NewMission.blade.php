@@ -63,7 +63,8 @@
 <div class="content-wrapper">        
 <div class="container-xxl flex-grow-1 container-p-y">         
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> Nouvelle Mission</h4>
-<form>
+<form methode="post" action="{{route('saveInfo')}}">
+    @csrf
 <div class="row">
   <div class="col-xl">
     <div class="card mb-4">
@@ -73,7 +74,7 @@
       <div class="card-body">
           <div class="mb-3">
             <label class="form-label" for="basic-default-fullname">Choisir Hopital</label>
-            <select class="form-control select2" style="width: 100%;">
+            <select name="adresse_Arriv" class="form-control select2" style="width: 100%;">
                     <option selected="selected">Alabama</option>
                     <option>Alaska</option>
                     <option>California</option>
@@ -85,32 +86,32 @@
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-company">Choisir Chauffeur</label>
-            <select name="idPersonne" class="form-control select2" style="width: 100%;">
+            <select name="idChauffeur" class="form-control select2" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
-            @foreach($chauffeurs as $chauffeur)
+            <!-- @foreach($chauffeurs as $chauffeur)
             <option value="{{$chauffeur->id}}">{{$chauffeur->idPersonne}}</option>
-            @endforeach
+            @endforeach -->
             </select>
           </div>
           <div class="mb-3">
             <label class=label for="exampleInputName">Nom</label>
             <div class="input-group input-group-merge">
             <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-              <input type="text" id="basic-default-email" class="form-control" placeholder="saisir nom" />
+              <input name="nom"type="text" id="basic-default-email" class="form-control" placeholder="saisir nom" />
             </div>
           </div>
           <div class="mb-3">
             <label class=label for="exampleInputName">Prenom</label>
             <div class="input-group input-group-merge">
             <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-              <input type="text" id="basic-default-email" class="form-control" placeholder="saisir prenom" />
+              <input name="prenom" type="text" id="basic-default-email" class="form-control" placeholder="saisir prenom" />
             </div>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-email">Email</label>
             <div class="input-group input-group-merge">
             <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-              <input type="text" id="basic-default-email" class="form-control" placeholder="saisir email" />
+              <input name="email"type="email" id="basic-default-email" class="form-control" placeholder="saisir email" />
               <span class="input-group-text" id="basic-default-email2">@example.com</span>
             </div>
           </div>
@@ -125,16 +126,16 @@
       <div class="card-body">
         <!-- <form> -->
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-fullname">Condition de transport</label>
-            <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Grave</option>
-                    <option>Pas Grave</option>
-                    <option>Grave</option>
+            <label class="form-label" for="basic-icon-default-fullname">Urgent</label>
+            <select name="condTransp" class="form-control select2" style="width: 100%;">
+                    <option selected="selected">Non</option>
+                    <option>Oui</option>
+                    <option>Non</option>
                   </select>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-company">Besoin d'appareillages</label>
-            <select class="form-control select2" style="width: 100%;">
+            <label class="form-label" for="basic-icon-default-company">Est facturé</label>
+            <select name="estFacture" class="form-control select2" style="width: 100%;">
                     <option selected="selected">Non</option>
                     <option>Oui</option>
                     <option>Non</option>
@@ -143,18 +144,10 @@
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-email">Adresse depart</label>
             <div class="input-group input-group-merge">
-              <input type="text" id="basic-icon-default-email" class="form-control" placeholder="adresse de depart" />
+              <input name="adresse_Dep"type="text" id="basic-icon-default-email" class="form-control" placeholder="adresse de depart" />
             </div>
           </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-phone">Urgent</label>
-            <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Non</option>
-                    <option>Oui</option>
-                    <option>Non</option>
-                   
-                  </select>
-          </div>
+          
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-message">Commentaires</label>
             <div class="input-group input-group-merge">

@@ -23,6 +23,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+  //FONCTION POUR CREER NOUVEL UTILISATEUR
+
     public function Create(Request $request){
         $request->password = Hash::make($request->password);
         $data['nom'] = $request->nom ;
@@ -38,8 +40,9 @@ class Controller extends BaseController
         return redirect('/welcome');
     }
 
+        // FONCTION RENSEIGNER NOUVEL HOPITAL
+
     public function CreateHopital(Request $request){
-       // $request->password = Hash::make($request->password);
         $data['refEtb'] = $request->refEtb ;
         $data['nom'] = $request->nom ;
         $data['adresseEtb'] = $request->adresseEtb ;
@@ -54,9 +57,24 @@ class Controller extends BaseController
         return redirect('/welcome');
     }
 
-    public function Home(){
-
+   // FONCTION CREER NOUVELLE MISSION
+   
+    public function NewMission(Request $request){
         $chauffeurs= Chauffeur::all();
+        $data['condTransp'] = $request->refEtb ;
+        $data['nom'] = $request->nom ;
+        $data['prenom'] = $request->adresseEtb ;
+        $data['email'] = $request->email ;
+        $data['date_Dep'] = $request->tel ;
+        $data['adresse_Dep'] = $request->estValide ;
+        $data['adresse_Arriv'] = $request->refEtb ;
+        $data['estUrgent'] = $request->refEtb ;
+        $data['estFacture'] = $request->refEtb ;
+        $data['refEtb'] = $request->refEtb ;
+        $data['idMalade'] = $request->refEtb ;
+        $data['idChauffeur'] = $request->refEtb ;
+        Demandetransport::create($data);
+
         return view('AjouterMission', compact('chauffeurs'));
     }
 
