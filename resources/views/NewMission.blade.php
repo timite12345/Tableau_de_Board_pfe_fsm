@@ -63,7 +63,7 @@
 <div class="content-wrapper">        
 <div class="container-xxl flex-grow-1 container-p-y">         
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> Nouvelle Mission</h4>
-<form methode="post" action="{{route('NewMission')}}">
+<form method="post" action="{{route('mission')}}">
     @csrf
 <div class="row">
   <div class="col-xl">
@@ -128,7 +128,7 @@
         <!-- <form> -->
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-fullname">Urgent</label>
-            <select name="condTransp" class="form-control select2" style="width: 100%;">
+            <select name="estUrgent" class="form-control select2" style="width: 100%;">
                     <option selected="selected">Non</option>
                     <option>Oui</option>
                     <option>Non</option>
@@ -143,17 +143,22 @@
                   </select>
           </div>
           <div class="mb-3">
+            <label class="form-label" for="basic-icon-default-email">Date depart</label>
+            <div class="input-group input-group-merge">
+              <input name="date_Dep"type="date" id="basic-icon-default-email" class="form-control" placeholder="date de depart" />
+            </div>
+          </div>
+          <div class="mb-3">
             <label class="form-label" for="basic-icon-default-email">Adresse depart</label>
             <div class="input-group input-group-merge">
               <input name="adresse_Dep"type="text" id="basic-icon-default-email" class="form-control" placeholder="adresse de depart" />
             </div>
           </div>
-          
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-message">Commentaires</label>
+            <label class="form-label" for="basic-icon-default-message">Conditions de transport</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
-              <textarea name="commentaires" class="form-control" placeholder="commentaires"></textarea>
+              <textarea name="condTransp" class="form-control" placeholder="conditions de transport"></textarea>
             </div>
           </div>
         </div>

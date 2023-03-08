@@ -36,7 +36,7 @@ Route::get('/NewMission', function () {
 Route::post('/Login_V',[Controller::class, "Login"])->name('connectUser');
 Route::post('/RegisterPage',[Controller::class, "Create"])->name('createUser');
 Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtbSante');
-Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('NewMission');
+Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
 
 
 Route::get('/welcome', function () {

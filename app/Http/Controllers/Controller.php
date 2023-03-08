@@ -91,10 +91,9 @@ public function NewMission(){
         $data['adresse_Arriv'] = $request->adresse_Arriv ;
         $data['estUrgent'] = $request->estUrgent ;
         $data['estFacture'] = $request->estFacture ;
-        $data['refEtb'] = $request->refEtb ;
-        $data['idMalade'] = $request->idMalade ;
+        // $data['refEtb'] = $request->refEtb ;
+        // $data['idMalade'] = $request->idMalade ;
         $data['idChauffeur'] = $request->idChauffeur ;
-        $data['commentaires'] = $request->idMalade ;
         Demandetransport::create($data);
 
         // return view('/');

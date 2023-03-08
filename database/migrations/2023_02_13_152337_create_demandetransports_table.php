@@ -24,15 +24,16 @@ return new class extends Migration
             $table->date("date_Dep");
             $table->string("adresse_Dep");
             $table->string("adresse_Arriv");
-            $table->string("commentaires");
-            $table->boolean("estUrgent")->default(false);
-            $table->boolean("estFacture")->default(true);
-            $table->unsignedBigInteger("refEtb");
-            $table->unsignedBigInteger("idMalade");
-            $table->unsignedBigInteger("idChauffeur");
-            $table->foreign('refEtb')->references('id')->on('etbsantes')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('idMalade')->references('id')->on('personne_malades')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('idChauffeur')->references('id')->on('chauffeurs')->onDelete('restrict')->onUpdate('restrict');
+            $table->string("estUrgent")->default(false);
+            $table->string("estFacture")->default(true);
+            $table->string("idChauffeur");
+
+            // $table->unsignedBigInteger("refEtb");
+            // $table->unsignedBigInteger("idMalade");
+            // $table->unsignedBigInteger("idChauffeur");
+            // $table->foreign('refEtb')->references('id')->on('etbsantes')->onDelete('restrict')->onUpdate('restrict');
+            // $table->foreign('idMalade')->references('id')->on('personne_malades')->onDelete('restrict')->onUpdate('restrict');
+            // $table->foreign('idChauffeur')->references('id')->on('chauffeurs')->onDelete('restrict')->onUpdate('restrict');
 
         });
     }
