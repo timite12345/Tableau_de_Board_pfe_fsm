@@ -94,9 +94,11 @@ public function NewMission(){
         $data['refEtb'] = $request->refEtb ;
         $data['idMalade'] = $request->idMalade ;
         $data['idChauffeur'] = $request->idChauffeur ;
+        $data['commentaires'] = $request->idMalade ;
         Demandetransport::create($data);
 
-        return view('/');
+        // return view('/');
+        return redirect('/welcome');
     }
 
     public function Login(LoginRequest $request){

@@ -21,6 +21,7 @@ class Demandetransport extends Model
         'refEtb',
         'idMalade',
         'idChauffeur',
+        'commentaires',
 
     ];
 

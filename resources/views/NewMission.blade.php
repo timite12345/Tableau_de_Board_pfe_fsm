@@ -63,7 +63,7 @@
 <div class="content-wrapper">        
 <div class="container-xxl flex-grow-1 container-p-y">         
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> Nouvelle Mission</h4>
-<form methode="post" action="{{route('createUser')}}">
+<form methode="post" action="{{route('NewMission')}}">
     @csrf
 <div class="row">
   <div class="col-xl">
@@ -86,11 +86,12 @@
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-company">Choisir Chauffeur</label>
-            <select name="idChauffeur" class="form-control select2" style="width: 100%;">
+            <select class="form-control select2" name="idChauffeur" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
-            @foreach($chauffeurs as $chauffeur)
-            <option value="{{$chauffeur->id}}">{{$chauffeur->idPersonne}}</option>
-            @endforeach
+                     <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
             </select>
           </div>
           <div class="mb-3">
@@ -152,7 +153,7 @@
             <label class="form-label" for="basic-icon-default-message">Commentaires</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
-              <textarea id="basic-icon-default-message" class="form-control" placeholder="commentaires"></textarea>
+              <textarea name="commentaires" class="form-control" placeholder="commentaires"></textarea>
             </div>
           </div>
         </div>

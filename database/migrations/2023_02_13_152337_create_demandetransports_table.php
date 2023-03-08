@@ -24,6 +24,7 @@ return new class extends Migration
             $table->date("date_Dep");
             $table->string("adresse_Dep");
             $table->string("adresse_Arriv");
+            $table->string("commentaires");
             $table->boolean("estUrgent")->default(false);
             $table->boolean("estFacture")->default(true);
             $table->unsignedBigInteger("refEtb");

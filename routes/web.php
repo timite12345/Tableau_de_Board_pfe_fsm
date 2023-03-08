@@ -16,12 +16,9 @@ use App\Http\Middleware;
 |
 */
 
-// Route::get('/', function () {
-//     return view('Login_V');
-// });
 
 Route::get('/',[Controller::class, "Home"]);
-Route::post('/NewMission',[Controller::class, "CreateNewMission"]);
+// Route::post('/NewMission',[Controller::class, "CreateNewMission"]);
 
 
 Route::get('/RegisterPage', function () {
@@ -30,6 +27,10 @@ Route::get('/RegisterPage', function () {
 
 Route::get('/FormEmploy', function () {
     return view('FormEmploy');
+});
+
+Route::get('/NewMission', function () {
+    return view('NewMission');
 });
 
 Route::post('/Login_V',[Controller::class, "Login"])->name('connectUser');
@@ -54,14 +55,14 @@ Route::get('/AjouterMission', function () {
     return view('AjouterMission');
 });
 
-Route::post('/NewMission',[Controller::class, "NewMission"])->name('saveInfo');
+// Route::post('/NewMission',[Controller::class, "NewMission"])->name('saveInfo');
 
 
 Route::get('/HistoriqueMission', function () {
     return view('HistoriqueMission');
 });
 
-Route::get('/NewMission', function () {
-    return view('NewMission');
-});
+// Route::get('/NewMission', function () {
+//     return view('NewMission');
+// });
 
