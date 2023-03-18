@@ -89,9 +89,10 @@
             <select class="form-control select2" name="idChauffeur" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
                      <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
+                     @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->nom}}</option>
+                    @endforeach
+                    
             </select>
           </div>
           <div class="mb-3">

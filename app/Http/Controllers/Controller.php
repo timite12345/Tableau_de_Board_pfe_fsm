@@ -26,10 +26,6 @@ use App\Models\Type_permis;
 use App\Models\Vehicule;
 
 
-
-
-
-
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -41,8 +37,8 @@ public function Home(){
 
 
 public function NewMission(){
-    $chauffeurs= Chauffeur::all();
-    return view('/NewMission', compact('chauffeurs'));
+    $users= User::all();
+    return view('/NewMission', compact('users'));
 }
 
   //FONCTION POUR CREER NOUVEL UTILISATEUR
@@ -136,4 +132,5 @@ public function NewMission(){
         return redirect('/welcome')->with('message',"Infos mises à jours !");
 
     }
+    
 }
