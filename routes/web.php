@@ -34,7 +34,6 @@ Route::post('/RegisterPage',[Controller::class, "Create"])->name('createUser');
 Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtbSante');
 Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
 Route::get('/NewMission',[Controller::class, "NewMission"])->name('NewMission');
-// Route::get('/NewMission',[Controller::class, "Home1"])->name('Home1');
 
        
 
@@ -54,14 +53,11 @@ Route::get('/AjouterMission', function () {
     return view('AjouterMission');
 });
 
-// Route::post('/NewMission',[Controller::class, "NewMission"])->name('saveInfo');
 
 
 Route::get('/HistoriqueMission', function () {
     return view('HistoriqueMission');
 });
 
-// Route::get('/NewMission', function () {
-//     return view('NewMission');
-// });
+
 
