@@ -29,16 +29,14 @@ Route::get('/FormEmploy', function () {
     return view('FormEmploy');
 });
 
-// Route::get('/NewMission', function () {
-//     return view('NewMission');
-// });
-
 Route::post('/Login_V',[Controller::class, "Login"])->name('connectUser');
 Route::post('/RegisterPage',[Controller::class, "Create"])->name('createUser');
 Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtbSante');
 Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
 Route::get('/NewMission',[Controller::class, "NewMission"])->name('NewMission');
+// Route::get('/NewMission',[Controller::class, "Home1"])->name('Home1');
 
+       
 
 Route::get('/welcome', function () {
     return view('welcome');

@@ -75,13 +75,11 @@
           <div class="mb-3">
             <label class="form-label" for="basic-default-fullname">Choisir Hopital</label>
             <select name="adresse_Arriv" class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
+                    <option selected="selected">Destination</option>
                     <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
+                   @foreach($etbsantes as $etbsante)
+                   <option value="{{$etbsante->id}}">{{$etbsante->nom}}</option>
+                   @endforeach
                   </select>
           </div>
           <div class="mb-3">

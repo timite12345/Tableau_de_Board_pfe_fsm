@@ -30,15 +30,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-public function Home(){
-    $chauffeurs= Chauffeur::all();
-    return view('/Login_V', compact('chauffeurs'));
-}
-
 
 public function NewMission(){
     $users= User::all();
-    return view('/NewMission', compact('users'));
+    $etbsantes= Etbsante::all();
+    return view('/NewMission', compact('users','etbsantes'));
 }
 
   //FONCTION POUR CREER NOUVEL UTILISATEUR
